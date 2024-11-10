@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+<<<<<<< HEAD
+=======
+import '../../../routes/app_pages.dart';
+>>>>>>> c2ca636 (third)
 import '../controllers/welcome_controller.dart';
 
 class WelcomeView extends StatefulWidget {
@@ -13,7 +17,11 @@ class _WelcomeViewState extends State<WelcomeView> {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
+<<<<<<< HEAD
 
+=======
+    var controller = Get.put(WelcomeController());
+>>>>>>> c2ca636 (third)
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -28,7 +36,10 @@ class _WelcomeViewState extends State<WelcomeView> {
                 height: screenHeight * 0.6,
               ),
             ),
+<<<<<<< HEAD
 
+=======
+>>>>>>> c2ca636 (third)
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
@@ -52,16 +63,26 @@ class _WelcomeViewState extends State<WelcomeView> {
                 ],
               ),
             ),
+<<<<<<< HEAD
 
             const SizedBox(height: 40),
 
+=======
+            const SizedBox(height: 40),
+>>>>>>> c2ca636 (third)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 children: [
                   ElevatedButton(
                     onPressed: () {
+<<<<<<< HEAD
                       Get.toNamed('/register');
+=======
+                      print("Button I am new here clicked");
+                      Get.toNamed(
+                          Routes.REGISTER); // Ensure consistency with Routes
+>>>>>>> c2ca636 (third)
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF353392),
@@ -81,7 +102,13 @@ class _WelcomeViewState extends State<WelcomeView> {
                   const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
+<<<<<<< HEAD
                       Get.toNamed('/login'); // Mengarahkan ke halaman login
+=======
+                      print("Navigating to login page...");
+                      Get.toNamed(
+                          Routes.LOGIN); // Ensure consistency with Routes
+>>>>>>> c2ca636 (third)
                     },
                     child: const Text(
                       'I have an account',
@@ -100,4 +127,8 @@ class _WelcomeViewState extends State<WelcomeView> {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c2ca636 (third)

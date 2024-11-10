@@ -14,7 +14,11 @@ class DetailsController extends GetxController {
     // Example data initialization
     brand.value = 'Car Brand';
     price.value = 100; // Example price
+<<<<<<< HEAD
     imagePath.value = 'assets/images/car.jpg'; // Example image path
+=======
+    imagePath.value = 'assets/images/ddd.png'; // Example image path
+>>>>>>> c2ca636 (third)
   }
 }
 

@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import 'package:car_rental/app/modules/details/views/details_view.dart';
+=======
+import 'package:car_rental/app/modules/details/controllers/details_controller.dart';
+import 'package:car_rental/app/modules/details/views/details_view.dart';
+import 'package:car_rental/app/modules/home/controllers/home_controller.dart';
+>>>>>>> c2ca636 (third)
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // Adjust the path as necessary
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c2ca636 (third)
 class HomeView extends StatefulWidget {
   @override
   _HomeViewState createState() => _HomeViewState();
@@ -20,7 +29,17 @@ class _HomeViewState extends State<HomeView> {
     Vehicle(name: 'Maserati', imagePath: 'assets/images/maserati.png'),
   ];
 
+<<<<<<< HEAD
   final List<String> brands = ['Mercedes', 'BMW', 'Maserati', 'Porsche', 'Toyota'];
+=======
+  final List<String> brands = [
+    'Mercedes',
+    'BMW',
+    'Maserati',
+    'Porsche',
+    'Toyota'
+  ];
+>>>>>>> c2ca636 (third)
   final List<String> recommended = ['BMW', 'Toyota', 'Audi', 'Honda'];
 
   List<Vehicle> filteredVehicles = [];
@@ -31,6 +50,10 @@ class _HomeViewState extends State<HomeView> {
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
+=======
+    Get.put(HomeController());
+>>>>>>> c2ca636 (third)
     filteredVehicles = vehicles;
     filteredBrands = brands;
     filteredRecommended = recommended;
@@ -42,6 +65,7 @@ class _HomeViewState extends State<HomeView> {
       filteredVehicles = query.isEmpty
           ? vehicles
           : vehicles
+<<<<<<< HEAD
               .where((vehicle) => vehicle.name.toLowerCase().contains(query.toLowerCase()))
               .toList();
       filteredBrands = query.isEmpty
@@ -50,11 +74,31 @@ class _HomeViewState extends State<HomeView> {
       filteredRecommended = query.isEmpty
           ? recommended
           : recommended.where((rec) => rec.toLowerCase().contains(query.toLowerCase())).toList();
+=======
+              .where((vehicle) =>
+                  vehicle.name.toLowerCase().contains(query.toLowerCase()))
+              .toList();
+      filteredBrands = query.isEmpty
+          ? brands
+          : brands
+              .where(
+                  (brand) => brand.toLowerCase().contains(query.toLowerCase()))
+              .toList();
+      filteredRecommended = query.isEmpty
+          ? recommended
+          : recommended
+              .where((rec) => rec.toLowerCase().contains(query.toLowerCase()))
+              .toList();
+>>>>>>> c2ca636 (third)
     });
   }
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    final controller = Get.find<HomeController>();
+>>>>>>> c2ca636 (third)
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -96,7 +140,11 @@ class _HomeViewState extends State<HomeView> {
               ),
             ),
             Text(
+<<<<<<< HEAD
               'Maylani',
+=======
+              'Garin',
+>>>>>>> c2ca636 (third)
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -148,11 +196,22 @@ class _HomeViewState extends State<HomeView> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+<<<<<<< HEAD
                   Text('Search Results for "$searchQuery":', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   SizedBox(height: 10),
                   ...filteredVehicles.map((vehicle) {
                     return ListTile(
                       leading: Image.asset(vehicle.imagePath, width: 40, height: 40, fit: BoxFit.cover),
+=======
+                  Text('Search Results for "$searchQuery":',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  SizedBox(height: 10),
+                  ...filteredVehicles.map((vehicle) {
+                    return ListTile(
+                      leading: Image.asset(vehicle.imagePath,
+                          width: 40, height: 40, fit: BoxFit.cover),
+>>>>>>> c2ca636 (third)
                       title: Text(vehicle.name),
                       onTap: () {
                         // Handle vehicle tap if needed
@@ -160,7 +219,13 @@ class _HomeViewState extends State<HomeView> {
                     );
                   }).toList(),
                   SizedBox(height: 20),
+<<<<<<< HEAD
                   Text('Brands:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+=======
+                  Text('Brands:',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+>>>>>>> c2ca636 (third)
                   SizedBox(height: 10),
                   ...filteredBrands.map((brand) {
                     return ListTile(
@@ -171,7 +236,13 @@ class _HomeViewState extends State<HomeView> {
                     );
                   }).toList(),
                   SizedBox(height: 20),
+<<<<<<< HEAD
                   Text('Recommended:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+=======
+                  Text('Recommended:',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+>>>>>>> c2ca636 (third)
                   SizedBox(height: 10),
                   ...filteredRecommended.map((rec) {
                     return ListTile(
@@ -190,7 +261,12 @@ class _HomeViewState extends State<HomeView> {
               height: 200,
               child: PageView(
                 children: [
+<<<<<<< HEAD
                   _buildPromoCard('assets/images/iris.png', 'Enjoy our Nov Deals', '30% off'),
+=======
+                  _buildPromoCard('assets/images/iris.png',
+                      'Enjoy our Nov Deals', '30% off'),
+>>>>>>> c2ca636 (third)
                 ],
               ),
             ),
@@ -200,14 +276,25 @@ class _HomeViewState extends State<HomeView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+<<<<<<< HEAD
                 Text('Our Brands', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+=======
+                Text('Our Brands',
+                    style:
+                        TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+>>>>>>> c2ca636 (third)
                 GestureDetector(
                   onTap: () {
                     // Navigate to 'See All'
                   },
                   child: Text(
                     'See All >',
+<<<<<<< HEAD
                     style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+=======
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+>>>>>>> c2ca636 (third)
                   ),
                 ),
               ],
@@ -216,7 +303,12 @@ class _HomeViewState extends State<HomeView> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
+<<<<<<< HEAD
                 _buildBrandCard('assets/images/mercedes.png', 'Mercedes', '+32'),
+=======
+                _buildBrandCard(
+                    'assets/images/mercedes.png', 'Mercedes', '+32'),
+>>>>>>> c2ca636 (third)
                 _buildBrandCard('assets/images/bmw.png', 'BMW', '+12'),
                 _buildBrandCard('assets/images/maserati.png', 'Maserati', '+5'),
                 _buildBrandCard('assets/images/porsche.png', 'Porsche', '+8'),
@@ -230,20 +322,32 @@ class _HomeViewState extends State<HomeView> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+<<<<<<< HEAD
                   Text('Recommended', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+=======
+                  Text('Recommended',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+>>>>>>> c2ca636 (third)
                   GestureDetector(
                     onTap: () {
                       // Navigate to 'See All'
                     },
                     child: Text(
                       'See All >',
+<<<<<<< HEAD
                       style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+=======
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
+>>>>>>> c2ca636 (third)
                     ),
                   ),
                 ],
               ),
             ),
             SizedBox(height: 16),
+<<<<<<< HEAD
             GridView.count(
               crossAxisCount: 2,
               crossAxisSpacing: 16,
@@ -256,6 +360,22 @@ class _HomeViewState extends State<HomeView> {
                 _buildRecommendedCard('assets/images/audi.png', 'Audi', 55),
                 _buildRecommendedCard('assets/images/iris.png', 'Honda', 30),
               ],
+=======
+            Obx(
+              () => GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                  ...controller.listVehicle.map(
+                    (element) => _buildRecommendedCard(element.primaryPhotoUrl,
+                        "${element.make} ${element.model}", 65),
+                  )
+                ],
+              ),
+>>>>>>> c2ca636 (third)
             ),
           ],
         ),
@@ -324,7 +444,13 @@ class _HomeViewState extends State<HomeView> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
+<<<<<<< HEAD
                 Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+=======
+                Text(title,
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+>>>>>>> c2ca636 (third)
                 Text(
                   subtitle,
                   style: TextStyle(color: Colors.red),
@@ -356,6 +482,7 @@ class _HomeViewState extends State<HomeView> {
   }
 
   Widget _buildRecommendedCard(String imagePath, String brand, int price) {
+<<<<<<< HEAD
   return GestureDetector(
     onTap: () {
        Get.to(DetailsView(), arguments: {
@@ -367,6 +494,17 @@ class _HomeViewState extends State<HomeView> {
     },
    
  
+=======
+    return GestureDetector(
+      onTap: () {
+        Get.lazyPut(() => DetailsController());
+        Get.to(DetailsView(), arguments: {
+          'brand': 'Toyota',
+          'image': 'assets/toyota.png',
+          'price': 100,
+        });
+      },
+>>>>>>> c2ca636 (third)
       child: Card(
         elevation: 2,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -376,7 +514,11 @@ class _HomeViewState extends State<HomeView> {
             Expanded(
               child: ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+<<<<<<< HEAD
                 child: Image.asset(
+=======
+                child: Image.network(
+>>>>>>> c2ca636 (third)
                   imagePath,
                   fit: BoxFit.cover,
                   width: double.infinity,

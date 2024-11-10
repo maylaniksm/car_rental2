@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import 'package:get/get.dart';
+=======
+import 'package:car_rental/app/modules/detail_payment/screen.dart';
+import 'package:car_rental/app/modules/webview/views/webview_page_view.dart';
+import 'package:get/get.dart';
+import '../modules/register/views/register_view.dart';
+>>>>>>> c2ca636 (third)
 import '../modules/welcome/controllers/welcome_controller.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/views/login_view.dart';
@@ -9,12 +16,20 @@ import '../modules/result/views/result_view.dart';
 import '../modules/result/bindings/result_binding.dart';
 import '../modules/details/views/details_view.dart';
 import '../modules/details/bindings/details_binding.dart';
+<<<<<<< HEAD
+=======
+import '../modules/webview/bindings/webview_binding.dart';
+>>>>>>> c2ca636 (third)
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> c2ca636 (third)
   static const INITIAL = Routes.WELCOME;
 
   static final routes = [
@@ -26,6 +41,14 @@ class AppPages {
       }),
     ),
     GetPage(
+<<<<<<< HEAD
+=======
+      name: Routes.REGISTER,
+      page: () => RegisterView(),
+      binding: BindingsBuilder(() {}),
+    ),
+    GetPage(
+>>>>>>> c2ca636 (third)
       name: Routes.LOGIN,
       page: () => LoginView(),
       binding: BindingsBuilder(() {}),
@@ -55,5 +78,20 @@ class AppPages {
       page: () => DetailsView(),
       binding: DetailsBinding(),
     ),
+<<<<<<< HEAD
   ];
 }
+=======
+    GetPage(
+      name: Routes.DETAILPAYMENT,
+      page: () => DetailPaymentScreen(),
+      binding: DetailsBinding(),
+    ),
+    GetPage(
+      name: Routes.WEBVIEW,
+      page: () => WebviewView(),
+      binding: WebViewBinding(), // Binding untuk WebviewPageController
+    ),
+  ];
+}
+>>>>>>> c2ca636 (third)

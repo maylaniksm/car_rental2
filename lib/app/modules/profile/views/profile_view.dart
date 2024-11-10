@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+>>>>>>> c2ca636 (third)
 import 'package:image_picker/image_picker.dart'; // Importing the image picker
 import 'dart:io'; // For File class
 
@@ -9,8 +15,14 @@ class ProfileView extends StatefulWidget {
 
 class _ProfileViewState extends State<ProfileView> {
   File? _profileImage; // Variable to hold the profile image
+<<<<<<< HEAD
   final ImagePicker _picker = ImagePicker(); // Create an instance of ImagePicker
   String _name = 'Maylani'; // Default name
+=======
+  final ImagePicker _picker =
+      ImagePicker(); // Create an instance of ImagePicker
+  String _name = 'Garin'; // Default name
+>>>>>>> c2ca636 (third)
   TextEditingController _nameController = TextEditingController();
 
   Future<void> _pickImage() async {
@@ -35,7 +47,12 @@ class _ProfileViewState extends State<ProfileView> {
     );
 
     if (choice != null) {
+<<<<<<< HEAD
       final XFile? pickedFile = await _picker.pickImage(source: choice); // Use the chosen source
+=======
+      final XFile? pickedFile =
+          await _picker.pickImage(source: choice); // Use the chosen source
+>>>>>>> c2ca636 (third)
       if (pickedFile != null) {
         setState(() {
           _profileImage = File(pickedFile.path); // Update the profile image
@@ -118,7 +135,12 @@ class _ProfileViewState extends State<ProfileView> {
                   child: CircleAvatar(
                     backgroundImage: _profileImage != null
                         ? FileImage(_profileImage!) // Use selected image
+<<<<<<< HEAD
                         : AssetImage('assets/images/profil.png') as ImageProvider, // Default image
+=======
+                        : AssetImage('assets/images/profil.png')
+                            as ImageProvider, // Default image
+>>>>>>> c2ca636 (third)
                     radius: 40, // Slightly larger profile image
                   ),
                 ),
@@ -151,11 +173,26 @@ class _ProfileViewState extends State<ProfileView> {
 
             // Menu Items
             _buildMenuItem('My Dashboard', Icons.dashboard_outlined, () {
+<<<<<<< HEAD
               Navigator.of(context).pushNamed('/dashboard'); // Navigate to DashboardView
             }),
             _buildMenuItem('Notification', Icons.notifications_outlined),
             _buildMenuItem('My Documents', Icons.file_copy_outlined),
             _buildMenuItem('About Us', Icons.info_outline),
+=======
+              Navigator.of(context)
+                  .pushNamed('/dashboard'); // Navigate to DashboardView
+            }),
+            _buildMenuItem('Notification', Icons.notifications_outlined),
+            _buildMenuItem('My Documents', Icons.file_copy_outlined, () {
+              Navigator.of(context)
+                  .pushNamed('/document'); // Navigate to MyDocumentsView
+            }),
+            _buildMenuItem('About Us', Icons.info_outline, () {
+              Get.toNamed('/webview'); // Menggunakan Get untuk navigasi
+            }),
+
+>>>>>>> c2ca636 (third)
             _buildMenuItem('Setting', Icons.settings_outlined),
 
             Spacer(),
@@ -163,9 +200,16 @@ class _ProfileViewState extends State<ProfileView> {
             // Logout Button
             Center(
               child: ElevatedButton(
+<<<<<<< HEAD
                 onPressed: () {
                   // Navigate back to the WelcomeView
                   Navigator.of(context).pushNamedAndRemoveUntil('/welcome', (route) => false);
+=======
+                onPressed: () async{
+                  await FirebaseAuth.instance.signOut();
+                  Navigator.of(context)
+                      .pushNamedAndRemoveUntil('/welcome', (route) => false);
+>>>>>>> c2ca636 (third)
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white, // Button background color
@@ -176,7 +220,12 @@ class _ProfileViewState extends State<ProfileView> {
                   ),
                 ),
                 child: Padding(
+<<<<<<< HEAD
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+=======
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+>>>>>>> c2ca636 (third)
                   child: Text(
                     'Log out',
                     style: TextStyle(
@@ -198,13 +247,24 @@ class _ProfileViewState extends State<ProfileView> {
     return GestureDetector(
       onTap: onTap, // Call the passed function on tap
       child: Padding(
+<<<<<<< HEAD
         padding: const EdgeInsets.symmetric(vertical: 16.0), // Padding for spacing
+=======
+        padding:
+            const EdgeInsets.symmetric(vertical: 16.0), // Padding for spacing
+>>>>>>> c2ca636 (third)
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               children: [
+<<<<<<< HEAD
                 Icon(icon, color: Colors.white, size: 20), // Adjusted icon size for consistency
+=======
+                Icon(icon,
+                    color: Colors.white,
+                    size: 20), // Adjusted icon size for consistency
+>>>>>>> c2ca636 (third)
                 SizedBox(width: 15),
                 Text(
                   title,
@@ -215,7 +275,13 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
               ],
             ),
+<<<<<<< HEAD
             Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16), // Arrow icon size for consistency
+=======
+            Icon(Icons.arrow_forward_ios,
+                color: Colors.white,
+                size: 16), // Arrow icon size for consistency
+>>>>>>> c2ca636 (third)
           ],
         ),
       ),

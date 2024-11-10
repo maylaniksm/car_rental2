@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import 'package:car_rental/app/modules/detail_payment/screen.dart';
+>>>>>>> c2ca636 (third)
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -17,9 +21,16 @@ class DetailsView extends GetView<DetailsController> {
           onPressed: () => Get.back(),
         ),
         title: Obx(() => Text(
+<<<<<<< HEAD
           controller.brand.value,
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         )),
+=======
+              controller.brand.value,
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            )),
+>>>>>>> c2ca636 (third)
         actions: [
           IconButton(
             icon: Icon(Icons.favorite_border, color: Colors.black),
@@ -31,6 +42,7 @@ class DetailsView extends GetView<DetailsController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+<<<<<<< HEAD
            Container(
   height: 200,
   child: PageView(
@@ -42,10 +54,24 @@ class DetailsView extends GetView<DetailsController> {
   ),
 ),
 
+=======
+            Container(
+              height: 200,
+              child: PageView(
+                children: [
+                  Obx(() => controller.imagePath.value.isNotEmpty
+                      ? Image.asset(controller.imagePath.value,
+                          fit: BoxFit.cover)
+                      : Placeholder()), // Fallback to Placeholder if imagePath is empty
+                ],
+              ),
+            ),
+>>>>>>> c2ca636 (third)
             SizedBox(height: 10),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
+<<<<<<< HEAD
                 children: List.generate(3, (index) =>
                   Container(
                     width: 8,
@@ -57,6 +83,19 @@ class DetailsView extends GetView<DetailsController> {
                     ),
                   )
                 ),
+=======
+                children: List.generate(
+                    3,
+                    (index) => Container(
+                          width: 8,
+                          height: 8,
+                          margin: EdgeInsets.symmetric(horizontal: 2),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: index == 0 ? Colors.blue : Colors.grey,
+                          ),
+                        )),
+>>>>>>> c2ca636 (third)
               ),
             ),
             Padding(
@@ -81,6 +120,7 @@ class DetailsView extends GetView<DetailsController> {
                   Row(
                     children: [
                       Obx(() => Text(
+<<<<<<< HEAD
                         controller.brand.value,
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       )),
@@ -89,6 +129,20 @@ class DetailsView extends GetView<DetailsController> {
                         '${controller.price.value} \$',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),
                       )),
+=======
+                            controller.brand.value,
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          )),
+                      Spacer(),
+                      Obx(() => Text(
+                            '${controller.price.value} \$',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue),
+                          )),
+>>>>>>> c2ca636 (third)
                       Text(
                         '/per day',
                         style: TextStyle(fontSize: 12, color: Colors.grey),
@@ -112,6 +166,7 @@ class DetailsView extends GetView<DetailsController> {
                         onRatingUpdate: (rating) {},
                       ),
                       SizedBox(width: 5),
+<<<<<<< HEAD
                       Text('4.9', style: TextStyle(fontWeight: FontWeight.bold)),
                       Text(' (230 Reviews)', style: TextStyle(color: Colors.grey)),
                     ],
@@ -119,6 +174,19 @@ class DetailsView extends GetView<DetailsController> {
                   SizedBox(height: 10),
                   _buildFeatureRow(Icons.airline_seat_recline_normal, '5 Seats', Icons.door_front_door, '4 Doors'),
                   _buildFeatureRow(Icons.settings, 'Manual', Icons.ac_unit, 'Air Conditioning'),
+=======
+                      Text('4.9',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text(' (230 Reviews)',
+                          style: TextStyle(color: Colors.grey)),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  _buildFeatureRow(Icons.airline_seat_recline_normal, '5 Seats',
+                      Icons.door_front_door, '4 Doors'),
+                  _buildFeatureRow(Icons.settings, 'Manual', Icons.ac_unit,
+                      'Air Conditioning'),
+>>>>>>> c2ca636 (third)
                   SizedBox(height: 20),
                   Text(
                     'What\'s included?',
@@ -129,7 +197,13 @@ class DetailsView extends GetView<DetailsController> {
                   Text('3000 km balance', style: TextStyle(color: Colors.grey)),
                   SizedBox(height: 10),
                   Text('Tax and Insurance'),
+<<<<<<< HEAD
                   Text('Our prices include mandatory taxes such as VAT,\nVehicle licensing Fee.', style: TextStyle(color: Colors.grey)),
+=======
+                  Text(
+                      'Our prices include mandatory taxes such as VAT,\nVehicle licensing Fee.',
+                      style: TextStyle(color: Colors.grey)),
+>>>>>>> c2ca636 (third)
                   SizedBox(height: 20),
                   Text(
                     'Price',
@@ -137,14 +211,29 @@ class DetailsView extends GetView<DetailsController> {
                   ),
                   SizedBox(height: 5),
                   Obx(() => Text(
+<<<<<<< HEAD
                     '${controller.price.value} \$/Day',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue),
                   )),
+=======
+                        '${controller.price.value} \$/Day',
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue),
+                      )),
+>>>>>>> c2ca636 (third)
                   SizedBox(height: 20),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
+<<<<<<< HEAD
                       onPressed: () {},
+=======
+                      onPressed: () {
+                        Get.toNamed('/date');
+                      },
+>>>>>>> c2ca636 (third)
                       child: Text('Rent Now'),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Color(0xFF353392),
@@ -178,7 +267,12 @@ class DetailsView extends GetView<DetailsController> {
     );
   }
 
+<<<<<<< HEAD
   Widget _buildFeatureRow(IconData icon1, String label1, IconData icon2, String label2) {
+=======
+  Widget _buildFeatureRow(
+      IconData icon1, String label1, IconData icon2, String label2) {
+>>>>>>> c2ca636 (third)
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
